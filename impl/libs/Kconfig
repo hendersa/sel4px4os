@@ -25,10 +25,14 @@ source "$SEL4_LIBS_PATH/libsel4muslcsys/Kconfig"
 source "$SEL4_LIBS_PATH/libsel4platsupport/Kconfig"
 source "$SEL4_LIBS_PATH/libsel4simple/Kconfig"
 source "$SEL4_LIBS_PATH/libsel4simple-stable/Kconfig"
+
+# AWH - Added libuclibc++
+source "$SEL4_LIBS_PATH/libuclibc++/Kconfig
+
 source "$SEL4_LIBS_PATH/libsel4utils/Kconfig"
 source "$SEL4_LIBS_PATH/libsel4vspace/Kconfig"
 source "$SEL4_LIBS_PATH/libsel4vka/Kconfig"
-source "$SEL4_LIBS_PATH/libsel4utils/Kconfig"
+# AWH source "$SEL4_LIBS_PATH/libsel4utils/Kconfig"
 source "$SEL4_LIBS_PATH/librefossys/Kconfig"
 source "$SEL4_LIBS_PATH/librefos/Kconfig"
 source "$SEL4_LIBS_PATH/libutils/Kconfig"
