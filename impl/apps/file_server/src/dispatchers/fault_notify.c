@@ -8,6 +8,7 @@
  * @TAG(NICTA_BSD)
  */
 
+#include <stdlib.h> /* AWH */
 #include <refos/refos.h>
 #include <refos/error.h>
 #include <refos/share.h>
