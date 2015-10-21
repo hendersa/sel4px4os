@@ -17,6 +17,9 @@
 /* Include Kconfig variables. */
 #include <autoconf.h>
 
+/* AWH - Types */
+#include <stdint.h>
+
 /*! @file
     @brief Common definitions, macros and inline functions used by RefOS userland library.
 
