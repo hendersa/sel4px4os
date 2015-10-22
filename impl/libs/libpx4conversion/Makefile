@@ -21,5 +21,6 @@ CPPFLAGS := -Os -D__PX4_POSIX -D__PX4_LINUX
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4mathlib/include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include/platforms
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../apps/px4uorb/include
 
 include $(SEL4_COMMON)/common.mk
