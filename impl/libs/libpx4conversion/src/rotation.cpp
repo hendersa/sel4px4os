@@ -38,7 +38,7 @@
  */
 
 #include "math.h"
-#include "rotation.h"
+#include <conversion/rotation.h>
 
 __EXPORT void
 get_rot_matrix(enum Rotation rot, math::Matrix<3, 3> *rot_matrix)
