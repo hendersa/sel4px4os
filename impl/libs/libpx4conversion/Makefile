@@ -17,6 +17,9 @@ CPPFILES := $(patsubst $(SOURCE_DIR)/%,%,$(wildcard $(SOURCE_DIR)/src/*.cpp))
 # Header files/directories this library provides
 HDRFILES := $(wildcard $(SOURCE_DIR)/include/*)
 
-CFLAGS := -Os
+CPPFLAGS := -Os -D__PX4_POSIX -D__PX4_LINUX
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4mathlib/include
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include/platforms
 
 include $(SEL4_COMMON)/common.mk
