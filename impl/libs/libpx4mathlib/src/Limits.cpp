@@ -41,7 +41,7 @@
 #include <math.h>
 #include <stdint.h>
 
-#include "Limits.hpp"
+#include <mathlib/math/Limits.hpp> /* AWH "Limits.hpp" */
 
 
 namespace math

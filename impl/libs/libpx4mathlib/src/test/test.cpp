@@ -41,7 +41,9 @@
 #include <math.h>
 #include <stdlib.h>
 
-#include "test.hpp"
+#include <mathlib/math/test/test.hpp> /* AWH "test.hpp" */
+/* AWH */
+#define __EXPORT
 
 bool __EXPORT equal(float a, float b, float epsilon)
 {

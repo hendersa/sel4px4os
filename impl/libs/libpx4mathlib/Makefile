@@ -18,6 +18,11 @@ CPPFILES += $(SOURCE_DIR)/src/Limits.cpp
 # Header files/directories this library provides
 HDRFILES := $(wildcard $(SOURCE_DIR)/include/*)
 
-CFLAGS := -Os
+CPPFLAGS := -Os -D__PX4_POSIX -D__PX4_LINUX
+#CPPFLAGS += -I$(SOURCE_DIR)/../../projects/refos/impl/include
+CPPFLAGS += -fvisibility=hidden
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../include/px4
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../include/px4/platforms 
+CPPFLAGS += -include visibility.h
 
 include $(SEL4_COMMON)/common.mk
