@@ -42,5 +42,6 @@ source "$SEL4_LIBS_PATH/libplatsupport/Kconfig"
 # AWH - Added PX4 libraries
 source "$SEL4_LIBS_PATH/libpx4conversion/Kconfig"
 source "$SEL4_LIBS_PATH/libpx4mathlib/Kconfig"
+source "$SEL4_LIBS_PATH/libpx4systemlib/Kconfig"
 
 endmenu

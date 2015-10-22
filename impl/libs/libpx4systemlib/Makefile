@@ -9,7 +9,7 @@
 #
 
 # Targets
-TARGETS := libpx4conversion.a
+TARGETS := libpx4systemlib.a
 
 # Source files required to build the target
 CPPFILES := $(patsubst $(SOURCE_DIR)/%,%,$(wildcard $(SOURCE_DIR)/src/*.cpp))
@@ -19,7 +19,6 @@ HDRFILES := $(wildcard $(SOURCE_DIR)/include/*)
 
 CPPFLAGS := -Os -D__PX4_POSIX -D__PX4_LINUX
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4mathlib/include
-CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4systemlib/include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include/platforms
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../apps/px4uorb/include
