@@ -12,19 +12,19 @@
 TARGETS := libpx4drivers.a
 
 # Source files required to build the target
-CPPFILES := $(SOURCE_DIR)/src/drivers/device/vdev.cpp
-CPPFILES += $(SOURCE_DIR)/src/drivers/device/vdev_posix.cpp
-CPPFILES += $(SOURCE_DIR)/src/drivers/device/vfile.cpp
-CPPFILES += $(SOURCE_DIR)/src/drivers/device/device_posix.cpp
-#CPPFILES += $(SOURCE_DIR)/src/drivers/device/i2c_posix.cpp
-#CPPFILES += $(SOURCE_DIR)/src/drivers/device/pio.cpp
-CPPFILES += $(SOURCE_DIR)/src/drivers/device/ringbuffer.cpp
-CPPFILES += $(SOURCE_DIR)/src/drivers/device/sim.cpp
+CPPFILES := $(SOURCE_DIR)/src/device/vdev.cpp
+CPPFILES += $(SOURCE_DIR)/src/device/vdev_posix.cpp
+CPPFILES += $(SOURCE_DIR)/src/device/vfile.cpp
+CPPFILES += $(SOURCE_DIR)/src/device/device_posix.cpp
+#CPPFILES += $(SOURCE_DIR)/src/device/i2c_posix.cpp
+#CPPFILES += $(SOURCE_DIR)/src/device/pio.cpp
+CPPFILES += $(SOURCE_DIR)/src/device/ringbuffer.cpp
+CPPFILES += $(SOURCE_DIR)/src/device/sim.cpp
 
 # Header files/directories this library provides
 HDRFILES := $(wildcard $(SOURCE_DIR)/include/*)
 
-CPPFLAGS := -Os -D__PX4_POSIX -D__PX4_LINUX
+CPPFLAGS := -Os -D__PX4_POSIX -D__PX4_LINUX -Dnoreturn_function= 
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4mathlib/include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4systemlib/include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4eigen/include
