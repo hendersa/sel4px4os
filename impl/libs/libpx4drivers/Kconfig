@@ -8,6 +8,9 @@
 # @TAG(NICTA_BSD)
 #
 
-apps-$(CONFIG_APP_PX4_UORB)  += px4uorb
-
-px4uorb: libmuslc libsel4 librefossys librefos libdatastruct libuclibc++ libpx4drivers
+config LIB_PX4_CONVERSION
+    bool "Build PX4 Conversion library"
+    depends on LIB_SEL4 && HAVE_LIBC && LIB_UCLIBCPP && LIB_PX4_MATHLIB
+    default y
+    help
+        PX4 firmware "conversion" library. 

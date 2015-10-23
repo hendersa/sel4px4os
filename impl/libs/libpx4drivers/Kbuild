@@ -8,6 +8,6 @@
 # @TAG(NICTA_BSD)
 #
 
-apps-$(CONFIG_APP_PX4_UORB)  += px4uorb
+libs-$(CONFIG_LIB_PX4_DRIVERS) += libpx4drivers
 
-px4uorb: libmuslc libsel4 librefossys librefos libdatastruct libuclibc++ libpx4drivers
+libpx4drivers: common libuclibc++
