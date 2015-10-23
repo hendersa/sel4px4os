@@ -9,13 +9,32 @@
 #
 
 # Targets
-TARGETS := uorb.bin
+TARGETS := px4uorb.bin
 
 # Source files required to build the target
-CFILES   := $(patsubst $(SOURCE_DIR)/%,%,$(wildcard $(SOURCE_DIR)/src/*.c))
+CPPFILES := $(SOURCE_DIR)/src/uORBDevices_posix.cpp
+CPPFILES += $(SOURCE_DIR)/src/uORBManager_posix.cpp
+CPPFILES += $(SOURCE_DIR)/src/uORBTest_UnitTest.cpp
+CPPFILES += $(SOURCE_DIR)/src/objects_common.cpp
+CPPFILES += $(SOURCE_DIR)/src/Publication.cpp
+CPPFILES += $(SOURCE_DIR)/src/Subscription.cpp
+CPPFILES += $(SOURCE_DIR)/src/uORBUtils.cpp
+CPPFILES += $(SOURCE_DIR)/src/uORB.cpp
+CPPFILES += $(SOURCE_DIR)/src/uORBMain.cpp
 ASMFILES := $(patsubst $(SOURCE_DIR)/%,%,$(wildcard $(SOURCE_DIR)/crt/arch-${ARCH}/crt0.S))
 
 NK_CFLAGS += -D_BSD_SOURCE -O2
+
+CPPFLAGS := -Os -D__PX4_POSIX -D__PX4_LINUX -Dnoreturn_function=
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4mathlib/include
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4systemlib/include
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4eigen/include
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libuclibc++/include
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include/platforms
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../apps/px4uorb/include
+CPPFLAGS += -fvisibility=hidden -include visibility.h -fpermissive
+CPPFLAGS += -std=c++11 -nostdinc++ -fno-exceptions -fno-rtti
 
 # Libraries required to build the target
 LIBS := muslc sel4 refossys refos datastruct uclibc++

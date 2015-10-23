@@ -8,6 +8,6 @@
 # @TAG(NICTA_BSD)
 #
 
-apps-$(CONFIG_APP_PX4UORB)  += px4uorb
+apps-$(CONFIG_APP_PX4_UORB)  += px4uorb
 
 px4uorb: libmuslc libsel4 librefossys librefos libdatastruct libuclibc++

@@ -25,6 +25,7 @@ source "$SEL4_APPS_PATH/test_user/Kconfig"
 source "$SEL4_APPS_PATH/tetris/Kconfig"
 source "$SEL4_APPS_PATH/snake/Kconfig"
 source "$SEL4_APPS_PATH/nethack/Kconfig"
+source "$SEL4_APPS_PATH/px4uorb/Kconfig"
 
 endmenu
 
