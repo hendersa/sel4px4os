@@ -18,11 +18,15 @@ CPPFILES += $(SOURCE_DIR)/src/Limits.cpp
 # Header files/directories this library provides
 HDRFILES := $(wildcard $(SOURCE_DIR)/include/*)
 
-CPPFLAGS := -Os -D__PX4_POSIX -D__PX4_LINUX
-#CPPFLAGS += -I$(SOURCE_DIR)/../../projects/refos/impl/include
-CPPFLAGS += -fvisibility=hidden
+CPPFLAGS := -Os -D__PX4_POSIX -D__PX4_LINUX -Dnoreturn_function= 
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4mathlib/include
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4systemlib/include
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4eigen/include
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libuclibc++/include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include
-CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include/platforms 
-CPPFLAGS += -include visibility.h
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include/platforms
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../apps/px4uorb/include
+CPPFLAGS += -fvisibility=hidden -include visibility.h -fpermissive
+CPPFLAGS += -std=c++11 -nostdinc++ -fno-exceptions -fno-rtti
 
 include $(SEL4_COMMON)/common.mk
