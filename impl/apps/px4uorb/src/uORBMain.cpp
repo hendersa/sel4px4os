@@ -40,7 +40,7 @@
 #include "uORBTest_UnitTest.hpp"
 #endif
 
-extern "C" { __EXPORT int uorb_main(int argc, char *argv[]); }
+extern "C" { __EXPORT int /* AWH uorb_*/main(int argc, char *argv[]); }
 
 static uORB::DeviceMaster *g_dev = nullptr;
 static void usage()
@@ -50,7 +50,7 @@ static void usage()
 
 
 int
-uorb_main(int argc, char *argv[])
+/* AWH uorb_*/main(int argc, char *argv[])
 {
   if (argc < 2) {
     usage();
