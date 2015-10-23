@@ -8,9 +8,9 @@
 # @TAG(NICTA_BSD)
 #
 
-config LIB_PX4_CONVERSION
-    bool "Build PX4 Conversion library"
-    depends on LIB_SEL4 && HAVE_LIBC && LIB_UCLIBCPP && LIB_PX4_MATHLIB
+config LIB_PX4_DRIVERS
+    bool "Build PX4 Driver library"
+    depends on LIB_SEL4 && HAVE_LIBC && LIB_UCLIBCPP
     default y
     help
-        PX4 firmware "conversion" library. 
+        PX4 firmware "driver" library. 

@@ -43,5 +43,6 @@ source "$SEL4_LIBS_PATH/libplatsupport/Kconfig"
 source "$SEL4_LIBS_PATH/libpx4conversion/Kconfig"
 source "$SEL4_LIBS_PATH/libpx4mathlib/Kconfig"
 source "$SEL4_LIBS_PATH/libpx4systemlib/Kconfig"
+source "$SEL4_LIBS_PATH/libpx4drivers/Kconfig
 
 endmenu
