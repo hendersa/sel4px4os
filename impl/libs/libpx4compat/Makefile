@@ -12,12 +12,15 @@
 TARGETS := libpx4compat.a
 
 # Source files required to build the target
-CFILES := $(SOURCE_DIR)/src/__aeabi_atexit.c
+CFILES := $(patsubst $(SOURCE_DIR)/%,%,$(wildcard $(SOURCE_DIR)/src/*.c))
+CFILES += $(patsubst $(SOURCE_DIR)/%,%,$(wildcard $(SOURCE_DIR)/src/px4_layer/*.c))
+CPPFILES := $(patsubst $(SOURCE_DIR)/%,%,$(wildcard $(SOURCE_DIR)/src/px4_layer/*.cpp))
 
 # Header files/directories this library provides
 HDRFILES := $(wildcard $(SOURCE_DIR)/include/*)
 
 CPPFLAGS := -Os -D__PX4_POSIX -D__PX4_LINUX -Dnoreturn_function= 
+CPPFLAGS += -D_XOPEN_SOURCE=700
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4mathlib/include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4systemlib/include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4eigen/include

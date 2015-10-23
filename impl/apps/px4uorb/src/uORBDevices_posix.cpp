@@ -43,6 +43,10 @@
 #include "uORBCommunicator.hpp"
 #include <stdlib.h>
 
+#if 1 /* AWH - px4_getpid() is now getpid() from libmuslc */
+#define px4_getpid getpid
+#endif /* AWH */
+
 std::map<std::string, uORB::DeviceNode *> uORB::DeviceMaster::_node_map;
 
 
