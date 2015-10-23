@@ -122,7 +122,7 @@ uint32_t faketime() {
 int
 main(void)
 {
-    SET_MUSLC_SYSCALL_TABLE;
+    /* AWH SET_MUSLC_SYSCALL_TABLE; */
     dprintf("Initialising RefOS Console server.\n");
     refosio_setup_morecore_override(conServMMapRegion, CONSERV_MMAP_REGION_SIZE);
     refos_initialise_os_minimal();

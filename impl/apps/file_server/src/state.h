@@ -16,7 +16,7 @@
 #include <assert.h>
 #include <sel4/sel4.h>
 #include <cpio/cpio.h>
-#include <syscall_stubs_sel4.h>
+/* AWH #include <syscall_stubs_sel4.h> */
 
 #include <refos/refos.h>
 #include <refos-util/cspace.h>

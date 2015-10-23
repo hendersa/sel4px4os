@@ -16,8 +16,8 @@
 #include <refos/refos.h>
 #include <refos-rpc/rpc.h>
 
-#include <syscall_stubs_sel4.h>
-MUSLC_SYSCALL_TABLE;
+/* AWH #include <syscall_stubs_sel4.h>
+MUSLC_SYSCALL_TABLE; */
 
 /*! @file
     @brief Global statuc struct & helper functions for process server. */

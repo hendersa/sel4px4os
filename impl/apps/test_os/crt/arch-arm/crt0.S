@@ -8,16 +8,6 @@
  * @TAG(NICTA_BSD)
  */
 
-/*
- * Copyright 2014, NICTA
- *
- * This software may be distributed and modified according to the terms of
- * the BSD 2-Clause license. Note that NO WARRANTY is provided.
- * See "LICENSE_BSD2.txt" for details.
- *
- * @TAG(NICTA_BSD)
- */
-
 .extern seL4_InitBootInfo
 .extern exit
 
@@ -26,13 +16,13 @@
 /*
  * Image Entry point.
  */
+/* AWH - In newer libmuslc crt1.S
 .global _start
 _start:
-    ldr     sp, =_stack_top
 
-    /* Call main. */
     bl      main
     b       exit
+*/
 
 /*
  * Symbols required for libgcc.
@@ -50,9 +40,3 @@ __aeabi_unwind_cpp_pr2:
 /* .text Literal Pool */
 .pool
 
-/* stack. */
-.bss
-.align  4
-_stack_bottom:
-.space  16384
-_stack_top:

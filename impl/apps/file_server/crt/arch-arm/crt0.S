@@ -16,14 +16,13 @@
 /*
  * Image Entry point.
  */
+/* AWH - In newer libmuslc crt1.S
 .global _start
 _start:
-    /* Setup a stack for ourselves. */
-    ldr     sp, =_stack_top
 
-    /* Call main. */
     bl      main
     b       exit
+*/
 
 /*
  * Symbols required for libgcc.
@@ -41,9 +40,3 @@ __aeabi_unwind_cpp_pr2:
 /* .text Literal Pool */
 .pool
 
-/* Stack for the image. */
-.bss
-.align  4
-_stack_bottom:
-.space  0x4000
-_stack_top:

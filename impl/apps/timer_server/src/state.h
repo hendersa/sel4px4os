@@ -19,7 +19,7 @@
 #include <sel4/sel4.h>
 #include <refos/vmlayout.h>
 #include <refos-rpc/rpc.h>
-#include <syscall_stubs_sel4.h>
+/* AWH #include <syscall_stubs_sel4.h> */
 
 #include <platsupport/chardev.h>
 #include <platsupport/serial.h>
