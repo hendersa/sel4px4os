@@ -46,7 +46,8 @@
 #include <stdint.h>
 
 /* XXX for ORB_DECLARE used in many drivers */
-#include "../modules/uORB/uORB.h"
+/* AWH #include "../modules/uORB/uORB.h" */
+#include <uORB/uORB.h> /* AWH */
 
 /*
  * ioctl() definitions
