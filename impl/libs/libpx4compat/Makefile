@@ -14,6 +14,7 @@ TARGETS := libpx4compat.a
 # Source files required to build the target
 CFILES := $(patsubst $(SOURCE_DIR)/%,%,$(wildcard $(SOURCE_DIR)/src/*.c))
 CFILES += $(patsubst $(SOURCE_DIR)/%,%,$(wildcard $(SOURCE_DIR)/src/px4_layer/*.c))
+CFILES += $(patsubst $(SOURCE_DIR)/%,%,$(wildcard $(SOURCE_DIR)/src/common/*.c))
 CPPFILES := $(patsubst $(SOURCE_DIR)/%,%,$(wildcard $(SOURCE_DIR)/src/px4_layer/*.cpp))
 ASMFILES := $(patsubst $(SOURCE_DIR)/%,%,$(wildcard $(SOURCE_DIR)/src/$(ARCH)/*.S))
 
@@ -30,7 +31,7 @@ CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libuclibc++/include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include/platforms
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include/platforms/posix/include
-CPPFLAGS += -I$(SEL4_COMMON)/../../../../apps/px4uorb/include
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4uorb/include
 CPPFLAGS += -fvisibility=hidden -include visibility.h -fpermissive
 CPPFLAGS += -std=c++11 -nostdinc++ -fno-exceptions -fno-rtti
 

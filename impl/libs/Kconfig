@@ -45,5 +45,12 @@ source "$SEL4_LIBS_PATH/libpx4conversion/Kconfig"
 source "$SEL4_LIBS_PATH/libpx4mathlib/Kconfig"
 source "$SEL4_LIBS_PATH/libpx4systemlib/Kconfig"
 source "$SEL4_LIBS_PATH/libpx4drivers/Kconfig"
+source "$SEL4_LIBS_PATH/libpx4geo/Kconfig"
+source "$SEL4_LIBS_PATH/libpx4geo_lookup/Kconfig"
+source "$SEL4_LIBS_PATH/libpx4controllib/Kconfig"
+source "$SEL4_LIBS_PATH/libpx4dataman/Kconfig"
+source "$SEL4_LIBS_PATH/libpx4fw_pos_control_l1/Kconfig"
+source "$SEL4_LIBS_PATH/libpx4uorb/Kconfig"
+source "$SEL4_LIBS_PATH/libpx4unit_test/Kconfig"
 
 endmenu

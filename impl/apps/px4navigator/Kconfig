@@ -1,0 +1,16 @@
+#
+# Copyright 2014, NICTA
+#
+# This software may be distributed and modified according to the terms of
+# the BSD 2-Clause license. Note that NO WARRANTY is provided.
+# See "LICENSE_BSD2.txt" for details.
+#
+# @TAG(NICTA_BSD)
+#
+
+config APP_PX4_NAVIGATOR
+    bool "PX4 Navigator"
+    default y
+    depends on LIB_SEL4 && HAVE_LIBC && LIB_REFOS && LIB_UCLIBCPP && LIB_PX4_GEO && LIB_PX4_GEO_LOOKUP && LIB_PX4_CONTROLLIB && LIB_PX4_DATAMAN && LIB_PX4_FW_POS_CONTROL_L1 && LIB_PX4_UORB && LIB_PX4_SYSTEMLIB && LIB_PX4_MATHLIB
+    help
+        PX4 Navigator module.

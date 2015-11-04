@@ -33,7 +33,7 @@ CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libuclibc++/include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include/platforms
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../px4include/platforms/posix/include
-CPPFLAGS += -I$(SEL4_COMMON)/../../../../apps/px4uorb/include
+CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4uorb/include
 CPPFLAGS += -fvisibility=hidden -include visibility.h -fpermissive
 CPPFLAGS += -std=c++11 -nostdinc++ -fno-exceptions -fno-rtti
 
