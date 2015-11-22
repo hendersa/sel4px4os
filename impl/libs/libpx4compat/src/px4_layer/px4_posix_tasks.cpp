@@ -146,6 +146,7 @@ px4_task_t px4_task_spawn_cmd(const char *name, int scheduler, int priority, int
 		PX4_WARN("px4_task_spawn_cmd: failed to init thread attrs");
 		return (rv < 0) ? rv : -rv;
 	}
+#if 0 /* AWH - Not in our muslc */
 	rv = pthread_attr_setinheritsched(&attr, PTHREAD_EXPLICIT_SCHED);
 	if (rv != 0) {
 		PX4_WARN("px4_task_spawn_cmd: failed to set inherit sched");
@@ -156,7 +157,7 @@ px4_task_t px4_task_spawn_cmd(const char *name, int scheduler, int priority, int
 		PX4_WARN("px4_task_spawn_cmd: failed to set sched policy");
 		return (rv < 0) ? rv : -rv;
 	}
-
+#endif /* AWH */
 	param.sched_priority = priority;
 
 	rv = pthread_attr_setschedparam(&attr, &param);
