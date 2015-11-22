@@ -10,4 +10,4 @@
 
 apps-$(CONFIG_APP_PX4_MAVLINK)  += px4mavlink
 
-px4mavlink: libmuslc libsel4 librefossys librefos libdatastruct libuclibc++ libpx4drivers libpx4compat libpx4controllib libpx4systemlib libpx4uorb libpx4conversion libpx4unit_test libpx4dataman
+px4mavlink: libmuslc libsel4 librefossys librefos libdatastruct libuclibc++ libpx4drivers libpx4compat libpx4controllib libpx4systemlib libpx4uorb libpx4geo libpx4geo_lookup libpx4conversion libpx4unit_test libpx4dataman

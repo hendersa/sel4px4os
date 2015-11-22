@@ -16,13 +16,12 @@
 /*
  * Image Entry point.
  */
-/* AWH - In newer libmuslc crt1.S
+
 .global _start
 _start:
 
     bl      main
     b       exit
-*/
 
 /*
  * Symbols required for libgcc.

@@ -38,7 +38,7 @@ CPPFLAGS += -fvisibility=hidden -include visibility.h -fpermissive
 CPPFLAGS += -std=c++11 -nostdinc++ -fno-exceptions -fno-rtti
 
 # Libraries required to build the target
-LIBS := c sel4 refossys refos datastruct uclibc++ px4drivers px4compat px4systemlib px4geo px4geo_lookup px4controllib px4dataman px4fw_pos_control_l1 px4uorb px4mathlib
+LIBS := muslc sel4 refossys refos datastruct uclibc++ px4drivers px4compat px4systemlib px4geo px4geo_lookup px4controllib px4dataman px4fw_pos_control_l1 px4uorb px4mathlib
 
 # Custom linker script
 NK_LDFLAGS += -T $(SOURCE_DIR)/linker.lds

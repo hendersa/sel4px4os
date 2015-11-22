@@ -37,6 +37,11 @@
 #include <px4_time.h>
 #include <stdio.h>
 
+#if 1 /* AWH */
+#undef warnx
+#define warnx printf
+#endif /* AWH */
+
 #if 1 /* AWH - Pulled from UAVCAN library */
 extern "C" {
 __extension__ typedef int __guard __attribute__((mode (__DI__)));

@@ -31,6 +31,23 @@
  *
  ****************************************************************************/
 
+#if 1 /* AWH - sel4 */
+extern "C" {
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include <assert.h>
+#include <time.h>
+#include <unistd.h>
+
+#include <refos/refos.h>
+#include <refos-io/stdio.h>
+#include <refos-util/init.h>
+#include <refos-util/dprintf.h>
+}
+#endif /* AWH */
+
 #include <string.h>
 #include "uORBDevices.hpp"
 #include "uORB.h"
@@ -40,7 +57,11 @@
 #include "uORBTest_UnitTest.hpp"
 #endif
 
-extern "C" { __EXPORT int /* AWH uorb_*/main(int argc, char *argv[]); }
+#if 1 /* AWH */
+extern "C" { int main(void); }
+#else
+extern "C" { __EXPORT int uorb_main(int argc, char *argv[]); }
+#endif /* AWH */
 
 static uORB::DeviceMaster *g_dev = nullptr;
 static void usage()
@@ -50,8 +71,53 @@ static void usage()
 
 
 int
-/* AWH uorb_*/main(int argc, char *argv[])
+#if 1 /* AWH - No command line arguments! */
+main()
 {
+  int argc = 2;
+  FILE *fd;
+  size_t totalSize;
+  char buffer[128];
+  char *argv[2] = {"fileserv/px4uorb", "test"};
+
+  refos_initialise();
+#else
+uorb_main(int argc, char *argv[])
+{
+#endif /* AWH */
+#if 0 /* AWH - Filesystem tests */
+  printf("px4uorb started...\n");
+  printf("argc: %d\n", argc);
+  printf("Onward...\n");
+
+  /* Try reading */
+  fd = fopen("fileserv/hello.txt", "r");
+  totalSize = fread(buffer, 1, 100, fd);
+  printf("'%s'\n", buffer);
+  fclose(fd); 
+
+  /* Try writing */
+  fd = fopen("fileserv/hello2.txt", "w");
+  if (!fd) {
+    printf("failed to create fileserv/hello2.txt\n");
+    return 0;
+  }
+  strcpy(buffer, "This is a test!");
+  totalSize = fwrite(buffer, 1, sizeof(buffer), fd);
+  printf("Wrote %d bytes\n", totalSize);
+  fclose(fd);
+
+  /* Try reading what we wrote */
+  fd = fopen("fileserv/hello2.txt", "r");
+  if (!fd) {
+    printf("failed to open fileserv/hello2.txt\n");
+    return 0;
+  }
+  memset(buffer, 0, sizeof(buffer));
+  totalSize = fread(buffer, 1, sizeof(buffer), fd);
+  printf("'%s'\n", buffer);
+  fclose(fd);
+#endif /* AWH */
   if (argc < 2) {
     usage();
     return -EINVAL;

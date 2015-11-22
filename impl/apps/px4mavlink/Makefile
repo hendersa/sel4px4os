@@ -39,9 +39,10 @@ CPPFLAGS += -I$(SEL4_COMMON)/../../../../libs/libpx4conversion/include
 CPPFLAGS += -I$(SEL4_COMMON)/../../../../apps/px4commander/include
 CPPFLAGS += -fvisibility=hidden -include visibility.h -fpermissive
 CPPFLAGS += -std=c++11 -nostdinc++ -fno-exceptions -fno-rtti
+CPPFLAGS += -D__STDC_LIMIT_MACROS
 
 # Libraries required to build the target
-LIBS := c sel4 refossys refos datastruct uclibc++ px4drivers px4compat px4systemlib px4uorb px4geo px4geo_lookup px4conversion px4unit_test px4dataman
+LIBS := muslc sel4 refossys refos datastruct uclibc++ px4drivers px4compat px4systemlib px4uorb px4geo px4geo_lookup px4conversion px4unit_test px4dataman
 
 # Custom linker script
 NK_LDFLAGS += -T $(SOURCE_DIR)/linker.lds

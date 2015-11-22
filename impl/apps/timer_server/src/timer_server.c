@@ -116,7 +116,7 @@ uint32_t faketime() {
 int
 main(void)
 {
-    /* AWH SET_MUSLC_SYSCALL_TABLE; */
+    SET_MUSLC_SYSCALL_TABLE;
     dprintf("Initialising RefOS timer server.\n");
     refosio_setup_morecore_override(timeServMMapRegion, TIMESERV_MMAP_REGION_SIZE);
     refos_initialise();

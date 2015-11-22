@@ -25,7 +25,7 @@
 #include <vka/capops.h>
 #include <vspace/vspace.h>
 #include <sel4utils/vspace.h>
-/* AWH #include <syscall_stubs_sel4.h> */
+/* AWH */#include <syscall_stubs_sel4.h>
 #include <refos-util/nameserv.h>
 #include <sel4platsupport/platsupport.h>
 #include <data_struct/chash.h>

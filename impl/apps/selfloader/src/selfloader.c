@@ -30,7 +30,7 @@
 #include <refos-util/walloc.h>
 #include <refos-io/morecore.h>
 #include <refos-io/stdio.h>
-/* AWH #include <syscall_stubs_sel4.h> */
+#include <syscall_stubs_sel4.h>
 #include <utils/arith.h>
 
 /*! Global self-loader state. */
@@ -343,7 +343,7 @@ faketime() {
 int
 main(void)
 {
-    /* AWH SET_MUSLC_SYSCALL_TABLE; */
+    SET_MUSLC_SYSCALL_TABLE;
     refos_seL4_debug_override_stdout();
     dprintf(COLOUR_C "--- Starting RefOS process selfloader ---\n" COLOUR_RESET);
     refosio_setup_morecore_override(slMiniMorecoreRegion, SELFLOADER_MINI_MORECORE_REGION_SIZE);
